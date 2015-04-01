@@ -1,0 +1,22 @@
+<div class="row">
+	<%= erb :search_bar %>
+</div>
+
+<div id="google_canvas" class="row">
+	<span id="get_location_lat" name="latitude"></span>
+	<span id="get_location_long" name="longitude"></span> 
+</div>
+
+
+	<div class="row lowest_score_container">
+	    <div class="col-md-12">
+	    <% if session[:search_value] != 'low' %>
+			<%= erb :search_result, 
+			:locals => { :restaurant => @restaurants }%>
+		<% elsif session[:search_value].downcase == 'low' %>
+			<%= erb :violation_list, 
+			:locals => { :restaurant => @restaurants } %>
+		<% end %>
+		</div>
+	</div>
+</div>
