@@ -37,5 +37,5 @@ Dir[APP_ROOT.join('app', 'views', '*.rb')].each do |view_file|
   autoload ActiveSupport::Inflector.camelize(filename), view_file
 end
 
-ActiveRecord::Base.establish_connection :adapter  => 'sqlite3',
+ActiveRecord::Base.establish_connection :adapter  => 'pg',
                                         :database => DB_PATH

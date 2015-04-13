@@ -2,9 +2,6 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 # PostgreSQL driver
-gem 'pg'
-
-gem 'sqlite3'
 
 # Sinatra driver
 gem 'sinatra'
@@ -20,16 +17,21 @@ gem 'shotgun'
 gem 'bcrypt'
 gem 'yelp'
 
-gem 'pry-debugger'
 
-group :test do
-  gem 'shoulda-matchers'
-  gem 'rack-test'
-  gem 'rspec'
-  gem 'capybara'
-end
+# group :test do
+#   gem 'shoulda-matchers'
+#   gem 'rack-test'
+#   gem 'rspec'
+#   gem 'capybara'
+# end
 
-group :test, :development do
-  gem 'factory_girl'
-  gem 'faker'
+# group :test, :development do
+#   gem 'factory_girl'
+#   gem 'faker'
+# end
+
+gem 'sqlite3', :group => [:development, :test]
+group :production do
+  gem 'thin'
+  gem 'pg'
 end
