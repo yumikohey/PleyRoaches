@@ -37,5 +37,5 @@ Dir[APP_ROOT.join('app', 'views', '*.rb')].each do |view_file|
   autoload ActiveSupport::Inflector.camelize(filename), view_file
 end
 
-ActiveRecord::Base.establish_connection :adapter  => 'pg',
+ActiveRecord::Base.establish_connection :adapter  => 'postgresql',
                                         :database => DB_PATH
