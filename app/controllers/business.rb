@@ -17,7 +17,7 @@ get '/:business_id' do
 		@score = @score / (count-1)
 	end
 	@client = Yelp::Client.new({ 
-				   consumer_key: ENV['CONSUMER_KEY'],
+				           consumer_key: ENV['CONSUMER_KEY'],
                    consumer_secret: ENV['CONSUMER_SECRET'],
                    token: ENV['TOKEN'],
       	           token_secret: ENV['TOKEN_SECRET']
@@ -25,7 +25,7 @@ get '/:business_id' do
 
 	concate_business_name = @biz.name.split(' ').join('-')
 	business_yelp_id = concate_business_name + '-san-francisco'
-	@result = @client.business(business_yelp_id)
+  @result = @client.business(business_yelp_id)
 
 	@comments = Comment.where(business_id: params[:business_id])
 	erb :"business/profile"
@@ -38,8 +38,6 @@ post '/:business_id' do
 		user_id: User.find(session[:user_id]).id
 		)
 	user = User.find(session[:user_id]).screen_name
-	# require 'pry-debugger'
-	# binding.pry
 
 	if request.xhr?
 	   content_type :json

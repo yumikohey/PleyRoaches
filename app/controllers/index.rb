@@ -15,6 +15,3 @@ post '/' do
 	session[:search_value] = params[:search_info]
 	redirect "/"
 end
-
-# coordinates = { latitude: 37.7577, longitude: -122.4376 }
-# client.search_by_coordinates(coordinates, params, locale)

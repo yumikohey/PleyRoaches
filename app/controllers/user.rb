@@ -15,10 +15,9 @@ post '/login' do
   end
 end
 
-get '/logout' do
+get '/signout' do
   session[:user_id] = nil
-
-  redirect '/'
+  redirect '/user/register'
 end
 
 get '/user/register' do
